@@ -1,4 +1,4 @@
-from src import api_classes, vacans, fyn
+from src import api_classes, working_vacancies, functions
 import src
 import json
 import re # правда сам нашёл
@@ -6,7 +6,7 @@ import re # правда сам нашёл
 
 hh = api_classes.HHapi()
 sj = api_classes.SuperJobApi()
-vac_hh_sj = vacans.VacanciesAll()
+vac_hh_sj = working_vacancies.VacanciesAll()
 
 print("Загрузка Сайта HH.ru ...")
 hh.get_job()
@@ -61,7 +61,7 @@ def interaction():
     '''Функция взаимодействия с пользователем'''
 
     print('\nДобро пожаловать!\n')
-    list_vacancy = fyn.output_sites()
+    list_vacancy = functions.output_sites()
     filter_list = search_filter(list_vacancy)
     if len(filter_list) == 0:
         print('Ничего не найдено')

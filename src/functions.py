@@ -1,4 +1,4 @@
-from src import api_classes, vacans
+from src import api_classes, working_vacancies
 import json
 #from main import interaction
 
