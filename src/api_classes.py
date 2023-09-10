@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import requests
 
 class AbstractAPI(ABC):
-    '''Абстрактный класс ля работы с API и вакансиями'''
+    '''Абстрактный класс для работы с API и вакансиями'''
 
     @abstractmethod
     def get_job(self):
@@ -26,5 +26,3 @@ class SuperJobApi(AbstractAPI):
         params = {'keyword': f'python', 'count': 100}
         return requests.get(self.URL, headers=self.HEADERS, params=params).json()["objects"]
 
-sja = SuperJobApi()
-print(sja.get_job())
